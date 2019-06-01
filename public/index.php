@@ -1,0 +1,1 @@
+<?php echo "&copy; ".date('Y'). " Dogdemy"." | Silvia Teona";?>

@@ -1,0 +1,14 @@
+{
+    "name": "silviateona/dogdemy",
+    "description": "dog training gamified!",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Silvia Teona",
+            "email": "silviateona@gmail.com"
+        }
+    ],
+    "require": {
+        "stefangabos/zebra_image": "^2.2"
+    }
+}
