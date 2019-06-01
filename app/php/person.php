@@ -9,13 +9,13 @@ class Person{
 	public $gender;
 	public $description;
 
-	public function __construct($username,
-								$firstName,
-								$lastName,
-								$email,
-								$pswd,
-								$gender,
-								$description){
+	public function __construct(string $username,
+								string $firstName,
+								string $lastName,
+								string $email,
+								string $pswd,
+								bool $gender,
+								string $description){
 		$this->username=$username;
 		$this->firstName=$firstName;
 		$this->lastName=$lastName;
@@ -27,6 +27,9 @@ class Person{
 
 	public function getUsername(){
 		return $this->username;
+	}
+	public function getGender(){
+		return $this->gender? "male": "female";
 	}
 
 }//end class Person

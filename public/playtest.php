@@ -9,6 +9,11 @@
 		<link rel="icon" href="../favicon.png">
 	</head>
 	<body>
+<?php 
+require_once('../app/php/person.php');
+$peep = new Person('booboo','Boo','Boobly','boo@beep.com','baa',false,'huic is me!');
+echo 'Hello, it\'s me, '.ucfirst($peep->getUsername()).', and my gender is: '.strtoupper($peep->getGender()).'!';
 
+?>
 	</body>
 </html>
