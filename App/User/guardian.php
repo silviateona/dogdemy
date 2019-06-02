@@ -1,9 +1,9 @@
 <?php
-namespace App\Classes;
+namespace App\User;
 
 class Guardian extends Person{
 	public $pets;
-
+//since Guardian extends Person, we have a sort of double construct here
 	public function __construct(string $username,
 								string $firstName,
 								string $lastName,

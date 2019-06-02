@@ -1,14 +1,15 @@
 <?php 
-//connect to db
+//Autoloader.php
 try{
-	require_once('../include/db_connect.php');
-}catch(Exception $e){
-	$error = 'Dude, where\'s my db? <br>'.$e->getMessage();
-}
-try{
-	require_once('../app/classes/autoloader.php');
+	require_once('../app/include/autoloader.php');
 }catch(Exception $f){
 	$fail = 'Dude, where\'s my autoloader?<br>'.$f->getMessage();
+}
+//Database inclusion
+try{
+	require_once('../app/include/config.php');
+}catch(Exception $e){
+	$e = 'Dude, where\'s my db?<br>'.$e->getMessage();
 }
 ?>
 
@@ -24,23 +25,25 @@ try{
 	</head>
 	<body>
 <?php 
-//spl_autoload_register(function($className) {
-	//include_once $_SERVER['DOCUMENT_ROOT'] . '/app/php/' . $className . '.php';
 
 
-//require_once('../app/php/person.php');
-//require_once('../app/php/guardian.php'); //TODO:refine the php document path for requires/includes
-$peep = new App\Classes\Guardian('booboo','Boo','Boobly','boo@beep.com','baa',false,'huic is me!',2);
+$peep = new App\User\Guardian('booboo','Boo','Boobly','boo@beep.com','baa',false,'huic is me!',2);
 echo 'Hello, it\'s me, '.ucfirst($peep->getUsername()).', and my gender is: '.strtoupper($peep->getGender()).'!';
 echo "<br>I have ".$peep->getPetnum()." pets total!!";
 
 //test db connection:
+
 if($db){
-	echo "Yo man, my db!";
-}elseif($error){
-	echo $error;
+	echo "Yo man, my db!!!";
+}else{
+	echo "No db for u, sucka!<br>";
 }
 
+//Check db works with an SQL query:
+$sql = 'SELECT name FROM cat';
+foreach($db->query($sql)as $row){
+	echo "<br>The cat is named: ".$row['name'];
+}
 ?>
 	</body>
 </html>

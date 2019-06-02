@@ -1,5 +1,5 @@
 <?php
-namespace App\Classes;
+namespace App\User;
 class Person{
 	public $username;
 	public $firstName;
