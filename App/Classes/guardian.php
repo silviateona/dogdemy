@@ -1,4 +1,6 @@
 <?php
+namespace App\Classes;
+
 class Guardian extends Person{
 	public $pets;
 
